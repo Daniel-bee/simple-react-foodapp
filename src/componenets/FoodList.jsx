@@ -1,10 +1,13 @@
-const FoodList = ({ foodData }) => {
+import FoodItem from './FoodItem';
+import InnerContainer from './InnerContainer';
+
+const FoodList = ({ foodData, setFoodId }) => {
   return (
-    <>
+    <div className="flex-1">
       {foodData.map((food) => (
-        <div>{food.title}</div>
+        <FoodItem key={food.id} setFoodId={setFoodId} food={food} />
       ))}
-    </>
+    </div>
   );
 };
 

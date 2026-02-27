@@ -12,9 +12,9 @@ const Search = ({ foodData, setFoodData }) => {
     fetchFood();
   }, [query]);
   return (
-    <div>
+    <div className="flex justify-around">
       <input
-        className="border"
+        className="border-b-2 border-b-gray-400 pt-3 pb-1 p-l-0 outline-none text-2xl text-gray-400"
         onChange={(e) => setQuery(e.target.value)}
         value={query}
         type="text"
