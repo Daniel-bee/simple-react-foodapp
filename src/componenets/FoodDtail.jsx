@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import ItemList from './ItemList';
 const URL = 'https://api.spoonacular.com/recipes/<ID>/information';
 const KEY = '634645093fd145fea047f9aed7097db9';
 const FoodDetail = ({ foodId }) => {
@@ -31,6 +32,13 @@ const FoodDetail = ({ foodId }) => {
               <strong>
                 {food.vegetarian ? '🥕 Vegetarian' : '🍖 Non Vegetarian'}
               </strong>
+            </div>
+            <div className="py-2">
+              <strong>💰️ {(food.pricePerServing / 100).toFixed(2)}</strong>
+            </div>
+            <div>
+              <h2>Ingr</h2>
+              <ItemList food={food} />
             </div>
             <div>
               <h2 className="text-lg font-bold uppercase tracking-wider mb-3">
