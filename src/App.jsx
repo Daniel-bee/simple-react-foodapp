@@ -8,7 +8,7 @@ import InnerContainer from './componenets/InnerContainer';
 
 function App() {
   const [foodData, setFoodData] = useState([]);
-  const [foodId, setFoodId] = useState();
+  const [foodId, setFoodId] = useState(716300);
 
   return (
     <>
