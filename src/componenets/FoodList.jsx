@@ -3,7 +3,7 @@ import InnerContainer from './InnerContainer';
 
 const FoodList = ({ foodData, setFoodId }) => {
   return (
-    <div className="flex-1">
+    <div className="w-150">
       {foodData.map((food) => (
         <FoodItem key={food.id} setFoodId={setFoodId} food={food} />
       ))}

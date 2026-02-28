@@ -20,8 +20,8 @@ const FoodDetail = ({ foodId }) => {
       {loading ? (
         'Loading...'
       ) : (
-        <div className="flex-1">
-          <div>
+        <div className="flex-1 ">
+          <div className="ml-3">
             <h2 className="text-3xl font-bold mb-3 text-green-400">
               {food.title}
             </h2>
@@ -37,17 +37,19 @@ const FoodDetail = ({ foodId }) => {
               <strong>💰️ {(food.pricePerServing / 100).toFixed(2)}</strong>
             </div>
             <div>
-              <h2>Ingr</h2>
+              <h2 className="text-lg font-bold uppercase tracking-wider my-3">
+                Ingredients
+              </h2>
               <ItemList food={food} />
             </div>
-            <div>
-              <h2 className="text-lg font-bold uppercase tracking-wider mb-3">
+            <div className="ml-10">
+              <h2 className="text-lg font-bold uppercase tracking-wider mt-10 mb-4">
                 Instructions
               </h2>
               <div className="font-bold text-zinc-600 ">
                 <ol className="list-decimal space-y-3">
                   {food.analyzedInstructions[0].steps.map((instruction) => (
-                    <li key={instruction.step.number}>{instruction.step}</li>
+                    <li key={instruction.number}>{instruction.step}</li>
                   ))}
                 </ol>
               </div>
